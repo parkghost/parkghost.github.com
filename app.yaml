@@ -1,0 +1,14 @@
+application: assets-brandonc-me
+version: static
+runtime: python
+api_version: 1
+
+default_expiration: "1d"
+
+handlers:
+- url: /blog
+  static_dir: blog
+
+- url: /.*
+  static_files: index.html
+  upload: index.html
