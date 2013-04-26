@@ -1,21 +1,13 @@
 application: assets-brandonc-me
-version: static
-runtime: python27 
-api_version: 1
-threadsafe: true
+version: 1
+runtime: go
+api_version: go1
 
 default_expiration: "7d"
-
-pagespeed:
-  enabled_rewriters:
-  - MinifyCss
-  - CollapseWhitespace
-  - RemoveComments
 
 handlers:
 - url: /blog
   static_dir: blog
 
 - url: /.*
-  static_files: index.html
-  upload: index.html
+  script: _go_app
